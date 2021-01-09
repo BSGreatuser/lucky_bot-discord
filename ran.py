@@ -19,7 +19,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-     if message.content.startswith('봉순아 운세'):
+    if message.content.startswith('봉순아 운세'):
         w = message.content.split(" ")
         contentt = w[2]
 
