@@ -1,7 +1,7 @@
 import discord
 import urllib
 from urllib.parse import quote_plus
-import BeautifulSoup
+from bs4 import BeautifulSoup
 import requests
 
 client = discord.Client()
