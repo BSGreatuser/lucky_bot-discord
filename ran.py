@@ -19,7 +19,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('봉순아 운세'):
+    if message.content.startswith('!운세'):
         w = message.content.split(" ")
         contentt = w[2]
 
@@ -28,7 +28,7 @@ async def on_message(message):
                 or contentt =='게자리' or contentt =='사자자리' or contentt =='처녀자리' \
                 or contentt =='천칭자리' or contentt =='사수자리' or contentt =='염소자리':
             ww = message.content.split(" ")
-            content = ww[2]
+            content = ww[1]
             star = urllib.parse.quote(content + '운세')
             hdr = {'User-Agent': 'Mozilla/5.0'}
             url = 'https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=' + star
@@ -44,7 +44,7 @@ async def on_message(message):
             thumbfind = thumbloc.find('img')
             thumb = thumbfind.get('src')
 
-            embed = discord.Embed(color=RandomColor())
+            embed = discord.Embed(colour=discord.Colour.gold())
             embed.add_field(name=f'{realstar} 오늘의 운세', value=today, inline=False)
             embed.add_field(name=f'{realstar} 내일의 운세', value=tomorrow, inline=False)
             embed.set_thumbnail(url=thumb)
