@@ -22,7 +22,11 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith('!운세'):
         w = message.content.split(" ")
-        contentt = w[2]
+        try:
+            contentt = w[2]
+        except IndexError:
+            await message.channel.send('별자리를 입력해주세요')
+            return
 
         if contentt == '전갈자리' or contentt == '물병자리' or contentt =='물고기자리' \
                 or contentt =='양자리' or contentt =='황소자리' or contentt =='쌍둥이자리' \
