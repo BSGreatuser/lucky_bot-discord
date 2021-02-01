@@ -1,6 +1,7 @@
 import discord
 import urllib
 from urllib.parse import quote_plus
+from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
 import requests
 
