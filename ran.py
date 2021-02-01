@@ -7,9 +7,7 @@ import requests
 
 client = discord.Client()
 
-
 token = '★봇토큰★'
-
 
 @client.event
 async def on_ready():
@@ -25,7 +23,7 @@ async def on_message(message):
         try:
             contentt = w[2]
         except IndexError:
-            await message.channel.send('별자리를 입력해주세요')
+            await message.channel.send('별자리가 입력되지 않았습니다')
             return
 
         if contentt == '전갈자리' or contentt == '물병자리' or contentt =='물고기자리' \
