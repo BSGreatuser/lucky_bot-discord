@@ -21,7 +21,7 @@ async def on_message(message):
     if message.content.startswith('!운세'):
         w = message.content.split(" ")
         try:
-            contentt = w[2]
+            contentt = w[1]
         except IndexError:
             await message.channel.send('별자리가 입력되지 않았습니다')
             return
